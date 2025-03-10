@@ -1,11 +1,2 @@
-<<<<<<< HEAD
 @import "tailwindcss";
-/* 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-} */
-=======
-@import "tailwindcss";
->>>>>>> feb9a8b932963a92f5125e02456449e4bd141e13
+@import "tailwindcss/utilities";

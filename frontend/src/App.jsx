@@ -1,81 +1,16 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-
-// Freelancer Pages
-import FreelancerDashboard from "./pages/freelancer/Dashboard";
-import Profile from "./pages/freelancer/Profile";
-import SearchJobs from "./pages/freelancer/Jobs"; // Updated import for SearchJobs
-import FreelancerNavbar from "./components/freelancer/FreelancerNavbar";
-
-// Business Pages
-import BusinessDashboard from "./pages/business/Dashboard";
-import PostJob from "./pages/business/PostJob";
-import { Applicants } from "./pages/business";
-
-// Landing & Admin Pages
-import Landing from './pages/landing/Landing';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminDashboard from './pages/admin/Dashboard';
+import Landing from './pages/landing/Landing';
+import FreelancerDashboard from './pages/freelancer/Dashboard';
+import Profile from './pages/freelancer/Profile';
+import SearchJobs from './pages/freelancer/SearchJobs';
+import BusinessDashboard from './pages/business/Dashboard';
+import Applicants from './pages/business/Applicants';
+import PostJob from './pages/business/PostJob';
+import FreelancerLayout from './layouts/FreelancerLayout';
+import BusinessLayout from './layouts/BusinessLayout';
 
-// Layout wrapper for Freelancer pages
-function FreelancerLayout() {
-  return (
-    <div className="bg-gradient-to-b from-[#4A148C] to-[#7B1FA2] min-h-screen text-white">
-      <FreelancerNavbar />
-      <Outlet />
-    </div>
-  );
-}
-<<<<<<< HEAD
-=======
-
-// Layout wrapper for Business pages
-function BusinessLayout() {
-  return (
-    <div className="bg-gray-100 text-gray-900 min-h-screen">
-      <Outlet />
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        {/* Landing Page */}
-        <Route path="/" element={<Landing />} />
-
-        {/* Admin Dashboard */}
-        <Route path="/admin" element={<AdminDashboard />} />
-
-        {/* Freelancer Routes */}
-        <Route path="/freelancer" element={<FreelancerLayout />}>
-          <Route index element={<FreelancerDashboard />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="jobs" element={<SearchJobs />} />
-        </Route>
-
-        {/* Business Routes */}
-        <Route path="/business" element={<BusinessLayout />}>
-          {/* Default Business route */}
-          <Route index element={<BusinessDashboard />} />
-          <Route path="applicants" element={<Applicants />} />
-          <Route path="postjob" element={<PostJob />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
->>>>>>> 171ea5ab9e3e4373aba7488ebf3e1235c1eaadd6
-
-// Layout wrapper for Business pages
-function BusinessLayout() {
-  return (
-    <div className="bg-gray-100 text-gray-900 min-h-screen">
-      <Outlet />
-    </div>
-  );
-}
 
 function App() {
   return (
