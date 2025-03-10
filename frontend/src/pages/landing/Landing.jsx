@@ -1,16 +1,15 @@
 import React from 'react';
+import Navbar from '../../components/common/Navbar';
 import HeroSection from './HeroSection';
-import ThreeScene from './three/ThreeScene';
 
 function Landing() {
 	return (
-		<div>
-			<h1 className="text-2xl font-bold">Landing Page</h1>
+		<div className="relative">
+			<Navbar />
 			<HeroSection />
-			<ThreeScene />
+			{/* Additional sections or footer can be added here */}
 		</div>
 	);
 }
 
 export default Landing;
-
