@@ -2,14 +2,14 @@ import mongoose from "mongoose";
 
 const FreelancerSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  skills: [{ type: String, required: true }], // ✅ Change to an array of strings
+  skills: [{ type: String, required: true }],
   experience: { type: String, required: true },
   portfolio: { type: String },
   hourlyRate: { type: Number, required: true },
-  certifications: [{ type: String }], // ✅ Array of Strings
-  experienceDocs: [{ type: String }], // ✅ Array of Strings (URLs or file references)
+  certifications: [{ type: String }],
+  experienceDocs: [{ type: String }],
   location: { type: String },
-  availability: { type: String, enum: ["Full-time", "Part-time", "Freelance"] }, // ✅ Accept specific string values
+  availability: { type: String, enum: ["Full-time", "Part-time", "Freelance"] },
   github: { type: String },
   linkedin: { type: String },
 });

@@ -8,7 +8,7 @@ const jobSchema = new mongoose.Schema({
   postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   applicants: [
     {
-      freelancerId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // Ensure correct ref
+      freelancerId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
       coverLetter: String,
       appliedAt: { type: Date, default: Date.now }
     }

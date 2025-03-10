@@ -1,47 +1,9 @@
 import Freelancer from "../models/Freelancer.js";
 
+// ✅ Create Freelancer Profile
 export const createFreelancerProfile = async (req, res) => {
   try {
-    let {
-      name,
-      skills,
-      experience,
-      portfolio,
-      hourlyRate,
-      certifications = [],
-      experienceDocs = [],
-      location,
-      availability,
-      github,
-      linkedin,
-    } = req.body;
-
-    // ✅ Convert `skills` to an array if it's not already
-    if (typeof skills === "string") {
-      skills = skills.split(",").map((s) => s.trim()); // Convert "React, Node.js" → ["React", "Node.js"]
-    }
-
-    // ✅ Ensure `availability` is one of the expected values
-    const validAvailabilities = ["Full-time", "Part-time", "Freelance"];
-    if (!validAvailabilities.includes(availability)) {
-      return res.status(400).json({ message: "Invalid availability option" });
-    }
-
-    // ✅ Create Freelancer Profile
-    const freelancer = new Freelancer({
-      name,
-      skills,
-      experience,
-      portfolio,
-      hourlyRate,
-      certifications,
-      experienceDocs,
-      location,
-      availability,
-      github,
-      linkedin,
-    });
-
+    const freelancer = new Freelancer(req.body);
     await freelancer.save();
     res.status(201).json({ message: "Freelancer profile created", freelancer });
   } catch (error) {
@@ -49,7 +11,7 @@ export const createFreelancerProfile = async (req, res) => {
   }
 };
 
-// Get all freelancers
+// ✅ Get All Freelancers
 export const getFreelancers = async (req, res) => {
   try {
     const freelancers = await Freelancer.find();
