@@ -23,7 +23,7 @@ function FreelancerLayout() {
       <FreelancerNavbar />
       <Outlet />
     </div>
-  );
+  )
 }
 <<<<<<< HEAD
 =======
