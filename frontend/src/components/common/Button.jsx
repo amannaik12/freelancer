@@ -4,5 +4,4 @@ function Button() {
 	return <div>Common Button</div>;
 }
 
-export default Button;
-
+export default Button;

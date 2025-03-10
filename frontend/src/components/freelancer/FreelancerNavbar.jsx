@@ -6,7 +6,7 @@ const FreelancerNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 shadow-md w-full">
+    <nav className="h-15 bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 shadow-md w-full">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-8">
         {/* Logo */}
         <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-300 transition">
