@@ -1,7 +1,8 @@
 import React from 'react';
+import AdminDashboardCard from '../../components/admin/AdminDashboardCard';
 
 function Dashboard() {
-	return <div>Admin Dashboard</div>;
+	return <AdminDashboardCard />;
 }
 
 export default Dashboard;
