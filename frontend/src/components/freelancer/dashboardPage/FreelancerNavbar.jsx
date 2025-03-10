@@ -1,44 +1,44 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FiHome, FiUser, FiSearch, FiLogOut } from "react-icons/fi";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiHome, FiUser, FiSearch, FiLogOut } from 'react-icons/fi';
 
 const FreelancerNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 shadow-md fixed w-full top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-        {/* Left - Logo shifted slightly to the left */}
-        <h1 className="text-3xl font-bold cursor-pointer hover:text-gray-300 transition ml-4">
-          MINDLANCER
+    <nav className="h-15 bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 shadow-md w-full">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-8">
+        {/* Logo */}
+        <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-300 transition">
+          .MINDLANCER
         </h1>
 
-        {/* Right - Buttons aligned slightly more to the right */}
-        <div className="flex items-center space-x-8 mr-4">
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-12 gap-10">
           <Link
             to="/"
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-blue-700 transition"
           >
             <FiHome className="text-xl" />
             <span>Home</span>
           </Link>
           <Link
             to="/freelancer/profile"
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-blue-700 transition"
           >
             <FiUser className="text-xl" />
             <span>Profile</span>
           </Link>
           <Link
             to="/freelancer/jobs"
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-blue-700 transition"
           >
             <FiSearch className="text-xl" />
             <span>Search Jobs</span>
           </Link>
           <button
-            onClick={() => navigate("/login")}
-            className="flex items-center gap-2 bg-red-500 text-white px-5 py-2 rounded-lg text-lg font-semibold shadow-md hover:bg-red-600 transition duration-300"
+            onClick={() => navigate('/login')}
+            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
           >
             <FiLogOut className="text-xl" />
             <span>Log Out</span>
