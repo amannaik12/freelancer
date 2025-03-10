@@ -25,6 +25,48 @@ function FreelancerLayout() {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+
+// Layout wrapper for Business pages
+function BusinessLayout() {
+  return (
+    <div className="bg-gray-100 text-gray-900 min-h-screen">
+      <Outlet />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* Landing Page */}
+        <Route path="/" element={<Landing />} />
+
+        {/* Admin Dashboard */}
+        <Route path="/admin" element={<AdminDashboard />} />
+
+        {/* Freelancer Routes */}
+        <Route path="/freelancer" element={<FreelancerLayout />}>
+          <Route index element={<FreelancerDashboard />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="jobs" element={<SearchJobs />} />
+        </Route>
+
+        {/* Business Routes */}
+        <Route path="/business" element={<BusinessLayout />}>
+          {/* Default Business route */}
+          <Route index element={<BusinessDashboard />} />
+          <Route path="applicants" element={<Applicants />} />
+          <Route path="postjob" element={<PostJob />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+>>>>>>> 171ea5ab9e3e4373aba7488ebf3e1235c1eaadd6
 
 // Layout wrapper for Business pages
 function BusinessLayout() {
