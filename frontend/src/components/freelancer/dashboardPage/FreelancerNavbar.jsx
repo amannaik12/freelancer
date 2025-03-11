@@ -16,7 +16,7 @@ const FreelancerNavbar = () => {
         {/* Navigation Links */}
         <div className="flex items-center space-x-12 gap-10">
           <Link
-            to="/"
+            to="/freelancer"
             className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-blue-700 transition"
           >
             <FiHome className="text-xl" />

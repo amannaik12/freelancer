@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AdminSidebar from './AdminSidebar';
+import AdminNavbar from './AdminNavbar';
 
 function AdminDashboardCard() {
 	const [freelancers, setFreelancers] = useState([
@@ -34,91 +34,69 @@ function AdminDashboardCard() {
 	);
 
 	return (
-		<div className="flex">
-			<AdminSidebar
+		<div className="bg-gray-100 min-h-screen">
+			<AdminNavbar
 				onLogout={handleLogout}
 				currentSection={currentSection}
 				setCurrentSection={setCurrentSection}
 			/>
-			<main className="flex-1 p-10 bg-gray-50 min-h-screen">
-				<h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
-				<div className="mb-8">
+
+			<main className="p-10 max-w-6xl mx-auto">
+				<div className="mb-6">
 					<input
 						type="text"
 						placeholder="Search by name..."
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className="w-full max-w-md px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+						className="w-full max-w-md px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
 					/>
 				</div>
+
+				{/* Freelancer Section */}
 				{currentSection === 'freelancers' && (
 					<section>
-						<h2 className="text-2xl font-semibold mb-6">Freelancers</h2>
+						<h2 className="text-2xl font-semibold mb-4 text-blue-700">Freelancers</h2>
 						{filteredFreelancers.length === 0 ? (
 							<p className="text-gray-600">No freelancers found.</p>
 						) : (
-							<div className="overflow-x-auto">
-								<table className="min-w-full bg-white rounded-lg shadow">
-									<thead className="bg-gray-200">
-										<tr>
-											<th className="py-3 px-6 text-left">Name</th>
-											<th className="py-3 px-6 text-left">Skills</th>
-											<th className="py-3 px-6 text-left">Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-										{filteredFreelancers.map((f) => (
-											<tr key={f.id} className="border-b hover:bg-gray-100">
-												<td className="py-3 px-6">{f.name}</td>
-												<td className="py-3 px-6">{f.skills}</td>
-												<td className="py-3 px-6">
-													<button
-														onClick={() => handleDeleteFreelancer(f.id)}
-														className="text-red-500 hover:underline"
-													>
-														Delete
-													</button>
-												</td>
-											</tr>
-										))}
-									</tbody>
-								</table>
+							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+								{filteredFreelancers.map((f) => (
+									<div key={f.id} className="bg-white border border-blue-200 rounded-lg shadow-lg p-6 flex flex-col">
+										<h3 className="text-xl font-semibold text-blue-600">{f.name}</h3>
+										<p className="text-gray-700 mt-2">Skills: {f.skills}</p>
+										<button
+											onClick={() => handleDeleteFreelancer(f.id)}
+											className="mt-auto text-red-500 hover:text-red-600 font-medium transition"
+										>
+											Delete
+										</button>
+									</div>
+								))}
 							</div>
 						)}
 					</section>
 				)}
+
+				{/* Business Section */}
 				{currentSection === 'businesses' && (
 					<section>
-						<h2 className="text-2xl font-semibold mb-6">Businesses</h2>
+						<h2 className="text-2xl font-semibold mb-4 text-blue-700">Businesses</h2>
 						{filteredBusinesses.length === 0 ? (
 							<p className="text-gray-600">No businesses found.</p>
 						) : (
-							<div className="overflow-x-auto">
-								<table className="min-w-full bg-white rounded-lg shadow">
-									<thead className="bg-gray-200">
-										<tr>
-											<th className="py-3 px-6 text-left">Name</th>
-											<th className="py-3 px-6 text-left">Industry</th>
-											<th className="py-3 px-6 text-left">Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-										{filteredBusinesses.map((b) => (
-											<tr key={b.id} className="border-b hover:bg-gray-100">
-												<td className="py-3 px-6">{b.name}</td>
-												<td className="py-3 px-6">{b.industry}</td>
-												<td className="py-3 px-6">
-													<button
-														onClick={() => handleDeleteBusiness(b.id)}
-														className="text-red-500 hover:underline"
-													>
-														Delete
-													</button>
-												</td>
-											</tr>
-										))}
-									</tbody>
-								</table>
+							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+								{filteredBusinesses.map((b) => (
+									<div key={b.id} className="bg-white border border-blue-200 rounded-lg shadow-lg p-6 flex flex-col">
+										<h3 className="text-xl font-semibold text-blue-600">{b.name}</h3>
+										<p className="text-gray-700 mt-2">Industry: {b.industry}</p>
+										<button
+											onClick={() => handleDeleteBusiness(b.id)}
+											className="mt-auto text-red-500 hover:text-red-600 font-medium transition"
+										>
+											Delete
+										</button>
+									</div>
+								))}
 							</div>
 						)}
 					</section>

@@ -1,35 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar() {
-	return (
-		<nav className="bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg sticky top-0 z-50">
-			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
-				<div className="text-2xl text-white font-bold">Mindlancer</div>
-				<div className="hidden md:flex space-x-8">
-					<a href="#" className="text-gray-300 hover:text-white transition">
-						How It Works
-					</a>
-					<a href="#" className="text-gray-300 hover:text-white transition">
-						Browse Jobs
-					</a>
-					<a href="#" className="text-gray-300 hover:text-white transition">
-						For Businesses
-					</a>
-					<a href="#" className="text-gray-300 hover:text-white transition">
-						For Freelancers
-					</a>
-				</div>
-				<div className="flex space-x-4">
-					<button className="text-gray-300 hover:text-white transition">
-						Login
-					</button>
-					<button className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded transition">
-						Sign Up
-					</button>
-				</div>
-			</div>
-		</nav>
-	);
-}
+const Navbar = () => {
+  const navigate = useNavigate();
+
+  return (
+    <nav className="h-20 relative bg-gradient-to-b from-indigo-50 to-blue-100 text-blue-800 py-4 shadow-md w-full flex justify-center items-center">
+      {/* Logo Centered with Glow Effect */}
+      <h1
+        className="text-4xl font-bold cursor-pointer transition transform hover:scale-105 hover:text-blue-500"
+        onClick={() => navigate('/')}
+      >
+        .MINDLANCER
+      </h1>
+    </nav>
+  );
+};
 
 export default Navbar;

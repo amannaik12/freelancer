@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiSearch, FiSend, FiCheckCircle } from 'react-icons/fi';
+import FreelancerNavbar from '../../components/freelancer/dashboardPage/FreelancerNavbar';
 
 const SearchJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -52,6 +53,8 @@ const SearchJobs = () => {
   };
 
   return (
+    <div>
+      <FreelancerNavbar />
     <div className="min-h-screen bg-white text-blue-900 py-8 px-4 font-sans">
       <div className="max-w-5xl mx-auto bg-blue-50 text-blue-900 rounded-2xl shadow-lg p-8">
         <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-8">Search Jobs</h2>
@@ -85,6 +88,7 @@ const SearchJobs = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

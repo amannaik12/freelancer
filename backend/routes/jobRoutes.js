@@ -4,16 +4,9 @@ import { verifyToken, checkBusinessUser, checkFreelancerUser } from "../middlewa
 
 const router = express.Router();
 
-// ✅ Business Creates Job (Only Authenticated Businesses)
 router.post("/create", verifyToken, checkBusinessUser, createJob);
-
-// ✅ View All Jobs (Public)
 router.get("/", getJobs);
-
-// ✅ Freelancer Applies to a Job
 router.post("/:jobId/apply", verifyToken, checkFreelancerUser, applyToJob);
-
-// ✅ Get all applications for a specific job (Only Business Users)
 router.get("/:jobId/applications", verifyToken, checkBusinessUser, getJobApplications);
 
 export default router;
